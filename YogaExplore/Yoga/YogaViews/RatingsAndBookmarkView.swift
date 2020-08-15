@@ -51,7 +51,7 @@ class RatingsAndBookmarkView: NIBDesignableView {
         contentView.layer.mask = shapeLayerMask
         layer.shadowPath = shapePath.cgPath
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 10
+        layer.shadowRadius = 20
         layer.shadowOffset = .zero
         layer.shadowOpacity = 0.1
         layer.masksToBounds = false

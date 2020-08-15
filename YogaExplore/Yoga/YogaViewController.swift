@@ -20,11 +20,15 @@ class YogaViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var scrollContentView: UIView!
     private let scrollViewContentMargin: CGFloat = 20
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentInsetAdjustmentBehavior = .never
         setupView()
     }
+    
     private func setupView() {
         // Order of calls matter here, it's in same order as they appear in view.
         setupTopImageView()
@@ -46,16 +50,17 @@ class YogaViewController: UIViewController {
     }
 }
 
-// MARK: View setup
+// MARK:- View setup
+
 extension YogaViewController {
     private func setupGradientNavigationView() {
         let gradientViewSize: CGSize = .init(width: view.frame.width,
-                                         height: 100)
+                                         height: 120)
         let gradientView = UIView(frame: .zero)
         let backButtonView = UIView(frame: .zero)
         let backImageView = UIImageView(image: UIImage(named: "back"))
         backImageView.contentMode = .scaleAspectFit
-        backImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBack)))
+        backButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBack)))
         backButtonView.addSubview(backImageView)
         gradientView.addSubview(backButtonView)
         view.addSubview(gradientView)
@@ -71,14 +76,14 @@ extension YogaViewController {
             backImageView.heightAnchor.constraint(equalToConstant: 25),
             backImageView.widthAnchor.constraint(equalToConstant: 25),
             backImageView.centerXAnchor.constraint(equalTo: backButtonView.centerXAnchor),
-            backImageView.centerYAnchor.constraint(equalTo: backButtonView.centerYAnchor),
-            backButtonView.heightAnchor.constraint(equalToConstant: 44),
-            backButtonView.widthAnchor.constraint(equalToConstant: 44),
-            backButtonView.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 20),
-            backButtonView.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 30)
+            backImageView.bottomAnchor.constraint(equalTo: backButtonView.bottomAnchor),
+            backButtonView.heightAnchor.constraint(equalToConstant: 50),
+            backButtonView.widthAnchor.constraint(equalToConstant: 50),
+            backButtonView.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 10),
+            backButtonView.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 35)
         ])
         let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = [UIColor(white: 0, alpha: 0.65).cgColor, UIColor.clear]
+        gradient.colors = [UIColor(white: 0, alpha: 0.70).cgColor, UIColor.clear]
         gradient.locations = [0.0 , 1.0]
         gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
@@ -87,8 +92,9 @@ extension YogaViewController {
         view.bringSubviewToFront(gradientView)
     }
     private func setupTopImageView() {
+        let height = view.frame.height * 0.5 + 17
         let topImageSize: CGSize = .init(width: view.frame.width,
-                                         height: view.frame.height * 0.5)
+                                         height: height)
         topImageView = UIImageView(image: UIImage(named: "topImage"))
         topImageView.contentMode = .scaleAspectFill
         scrollContentView.addSubview(topImageView)

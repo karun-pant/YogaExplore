@@ -84,7 +84,7 @@ class BreadLoafTabBar: UIView {
         maskedBreadLoafView.layer.mask = shapeLayerMask
         layer.shadowPath = shapePath.cgPath
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 10
+        layer.shadowRadius = 20
         layer.shadowOffset = .init(width: 0, height: -5)
         layer.shadowOpacity = 0.1
         layer.masksToBounds = false
