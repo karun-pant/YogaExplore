@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressAndLocationView" customModule="YogaExplore" customModuleProvider="target">
+            <connections>
+                <outlet property="addressLabel" destination="mbn-XO-gBC" id="KXI-Pa-SGR"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="fGT-kg-Tnv"/>
+                <outlet property="nameLabel" destination="8El-qY-UaP" id="is5-rj-dyg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Efficitur Resort Yoga centre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8El-qY-UaP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="20"/>
+                    <color key="textColor" name="mainText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationPin" translatesAutoresizingMaskIntoConstraints="NO" id="sry-t2-Bj3">
+                    <rect key="frame" x="0.0" y="30.5" width="14" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="5dm-gL-b84"/>
+                        <constraint firstAttribute="width" constant="14" id="XL8-a7-Uce"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="755 Brickyard St., Lake Zurich, IL 60047" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-XO-gBC">
+                    <rect key="frame" x="22" y="28.5" width="353" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="tertiaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-Df-cxM">
+                    <rect key="frame" x="147" y="55" width="81" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="81" id="N34-JY-XhP"/>
+                        <constraint firstAttribute="height" constant="30" id="xRM-UT-Fj1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <state key="normal" title="See on map">
+                        <color key="titleColor" name="componentBackground"/>
+                    </state>
+                    <connections>
+                        <action selector="tapSeeOnMap:" destination="-1" eventType="touchUpInside" id="DZM-lS-57G"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="sry-t2-Bj3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0KZ-6F-1Zj"/>
+                <constraint firstItem="sry-t2-Bj3" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="12" id="3sg-bd-ScR"/>
+                <constraint firstItem="Xdd-Df-cxM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8FA-lx-e3b"/>
+                <constraint firstItem="mbn-XO-gBC" firstAttribute="leading" secondItem="sry-t2-Bj3" secondAttribute="trailing" constant="8" id="EMZ-Oe-sFR"/>
+                <constraint firstItem="8El-qY-UaP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EXw-D8-KRS"/>
+                <constraint firstItem="Xdd-Df-cxM" firstAttribute="top" secondItem="mbn-XO-gBC" secondAttribute="bottom" constant="10" id="Qmh-qU-M5Z"/>
+                <constraint firstItem="8El-qY-UaP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ucn-wr-N4G"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xdd-Df-cxM" secondAttribute="bottom" id="ZSe-a3-6Pd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8El-qY-UaP" secondAttribute="trailing" id="a6n-z9-9fO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mbn-XO-gBC" secondAttribute="trailing" id="aGD-P1-yFp"/>
+                <constraint firstItem="mbn-XO-gBC" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="10" id="lhw-El-0d0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="136.80000000000001" y="-96.7016491754123"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="locationPin" width="100" height="100"/>
+        <namedColor name="componentBackground">
+            <color red="0.72549019607843135" green="0.62745098039215685" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainText">
+            <color red="0.29411764705882354" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tertiaryText">
+            <color red="0.71764705882352942" green="0.68627450980392157" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

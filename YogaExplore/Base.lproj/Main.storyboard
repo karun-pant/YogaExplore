@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Afz-70-grX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Yoga View Controller-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="yoga" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="YogaViewController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="667" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2P5-EE-CYn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="667" translatesAutoresizingMaskIntoConstraints="NO" id="2NW-an-iFg" userLabel="RatingsAndBookMarkContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2NW-an-iFg" firstAttribute="leading" secondItem="ecr-Gm-QSK" secondAttribute="leading" id="2bw-q1-BRp"/>
+                                    <constraint firstItem="2NW-an-iFg" firstAttribute="bottom" secondItem="ecr-Gm-QSK" secondAttribute="bottom" id="6Bw-6L-NFw"/>
+                                    <constraint firstItem="2NW-an-iFg" firstAttribute="trailing" secondItem="ecr-Gm-QSK" secondAttribute="trailing" id="IUo-7q-4bg"/>
+                                    <constraint firstItem="2NW-an-iFg" firstAttribute="width" secondItem="Uxd-p8-Ioj" secondAttribute="width" id="LDX-PS-76U"/>
+                                    <constraint firstItem="2NW-an-iFg" firstAttribute="top" secondItem="2P5-EE-CYn" secondAttribute="top" id="wTG-Hg-xBA"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ecr-Gm-QSK"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Uxd-p8-Ioj"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2P5-EE-CYn" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="6TR-vS-fPb"/>
+                            <constraint firstItem="2P5-EE-CYn" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Awh-2f-62B"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="2P5-EE-CYn" secondAttribute="bottom" id="OX6-ae-qa9"/>
+                            <constraint firstAttribute="trailing" secondItem="2P5-EE-CYn" secondAttribute="trailing" id="p1r-0n-4RY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollContentView" destination="2NW-an-iFg" id="HSy-t0-mcb"/>
+                        <outlet property="scrollView" destination="2P5-EE-CYn" id="jJd-I8-0Oz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1951.2" y="-24.7376311844078"/>
+        </scene>
+        <!--Chats View Controller-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController storyboardIdentifier="chats" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rJ-Kc-sve" customClass="ChatsViewController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPg-e8-13v">
+                                <rect key="frame" x="136" y="194" width="44" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-yF-gTP">
+                                <rect key="frame" x="136" y="233" width="45" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2696.8000000000002" y="-23.838080959520241"/>
+        </scene>
+        <!--Main Tabbar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" customClass="MainTabbarController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="b2j-Qg-QQn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="lZZ-w4-sY2"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935.20000000000005" y="-22.03898050974513"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="A1L-h8-xY7">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pqu-29-njx" customClass="StartViewController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GcH-Bc-96f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-s4-WnB">
+                                <rect key="frame" x="112.5" y="335.5" width="150" height="40"/>
+                                <color key="backgroundColor" name="componentBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HBb-e6-APt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dI2-Mu-9EY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onStartTap:" destination="Pqu-29-njx" eventType="touchUpInside" id="Ibq-4q-5yp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerX" secondItem="4ti-Tj-BWP" secondAttribute="centerX" id="Pjg-wn-tEF"/>
+                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerY" secondItem="4ti-Tj-BWP" secondAttribute="centerY" id="qbh-BD-TMf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4ti-Tj-BWP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oco-6n-z9a">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0eC-ns-M6A"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnStart" destination="lFw-s4-WnB" id="40z-no-Acj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPN-gp-cR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.40000000000001" y="-22.938530734632685"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="eZO-El-V6v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Afz-70-grX" customClass="MainNavigationController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wU2-pV-17O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pqu-29-njx" kind="relationship" relationship="rootViewController" id="OHC-4M-v1d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ux1-fl-6zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1101.5999999999999" y="-22.938530734632685"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="componentBackground">
+            <color red="0.72549019607843135" green="0.62745098039215685" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

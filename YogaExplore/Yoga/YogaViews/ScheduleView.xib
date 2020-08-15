@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleView" customModule="YogaExplore" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Bs8-OD-bC7" id="Fen-vO-E4U"/>
+                <outlet property="weekdayTimeLabel" destination="y7U-J6-k9y" id="dcb-ik-JfF"/>
+                <outlet property="weekdayTitleLabel" destination="4sw-yr-TE5" id="RWe-d2-lcW"/>
+                <outlet property="weekendTimeLabel" destination="3iK-f9-nuk" id="TnA-Wl-9Nv"/>
+                <outlet property="weekendTitleLabel" destination="u1v-4H-1fu" id="OzI-4t-Jtx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Bs8-OD-bC7">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sw-yr-TE5">
+                    <rect key="frame" x="0.0" y="0.0" width="58" height="18.5"/>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="mainText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7U-J6-k9y">
+                    <rect key="frame" x="0.0" y="22.5" width="35.5" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="Cfz-rg-igs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="secondaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weekend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-4H-1fu">
+                    <rect key="frame" x="355.5" y="0.0" width="58.5" height="16"/>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="mainText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iK-f9-nuk">
+                    <rect key="frame" x="355.5" y="22.5" width="58.5" height="17"/>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="secondaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-Zs-w8t">
+                    <rect key="frame" x="0.0" y="49.5" width="92.5" height="22.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22.5" id="EQv-QP-Cdr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="20"/>
+                    <color key="textColor" name="secondaryText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-FS-meE">
+                    <rect key="frame" x="0.0" y="82" width="414" height="1"/>
+                    <color key="backgroundColor" name="tertiaryText"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="wJB-ql-lAB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="y7U-J6-k9y" firstAttribute="leading" secondItem="Bs8-OD-bC7" secondAttribute="leading" id="0g5-JF-dD5"/>
+                <constraint firstItem="4sw-yr-TE5" firstAttribute="leading" secondItem="L5U-xd-XSa" secondAttribute="leading" id="5s8-Fe-OZn"/>
+                <constraint firstItem="L5U-xd-XSa" firstAttribute="bottom" secondItem="rpm-FS-meE" secondAttribute="bottom" id="8tf-fs-aSK"/>
+                <constraint firstAttribute="trailing" secondItem="3iK-f9-nuk" secondAttribute="trailing" id="9iZ-3Z-8uz"/>
+                <constraint firstItem="rpm-FS-meE" firstAttribute="leading" secondItem="L5U-xd-XSa" secondAttribute="leading" id="JW3-jM-ajR"/>
+                <constraint firstItem="4sw-yr-TE5" firstAttribute="top" secondItem="Bs8-OD-bC7" secondAttribute="top" id="P5A-ng-wzK"/>
+                <constraint firstItem="L5U-xd-XSa" firstAttribute="trailing" secondItem="u1v-4H-1fu" secondAttribute="trailing" id="QJX-bo-riU"/>
+                <constraint firstItem="u1v-4H-1fu" firstAttribute="top" secondItem="4sw-yr-TE5" secondAttribute="top" id="Quu-mc-ZRy"/>
+                <constraint firstItem="3iK-f9-nuk" firstAttribute="height" secondItem="y7U-J6-k9y" secondAttribute="height" id="XnD-lC-Mid"/>
+                <constraint firstItem="rpm-FS-meE" firstAttribute="trailing" secondItem="L5U-xd-XSa" secondAttribute="trailing" id="aPk-es-2V1"/>
+                <constraint firstItem="y7U-J6-k9y" firstAttribute="top" secondItem="4sw-yr-TE5" secondAttribute="bottom" constant="4" id="blu-YY-Yg3"/>
+                <constraint firstItem="d9i-Zs-w8t" firstAttribute="leading" secondItem="L5U-xd-XSa" secondAttribute="leading" id="h29-LF-7k6"/>
+                <constraint firstItem="rpm-FS-meE" firstAttribute="top" secondItem="d9i-Zs-w8t" secondAttribute="bottom" constant="10" id="if2-nE-9Fc"/>
+                <constraint firstItem="3iK-f9-nuk" firstAttribute="top" secondItem="y7U-J6-k9y" secondAttribute="top" id="thT-zC-l2Q"/>
+                <constraint firstItem="3iK-f9-nuk" firstAttribute="leading" secondItem="u1v-4H-1fu" secondAttribute="leading" id="vIP-d5-Luu"/>
+                <constraint firstItem="d9i-Zs-w8t" firstAttribute="top" secondItem="y7U-J6-k9y" secondAttribute="bottom" constant="10" id="yVR-Kk-4XU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="L5U-xd-XSa"/>
+            <point key="canvasLocation" x="457.97101449275368" y="-119.86607142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="mainText">
+            <color red="0.29411764705882354" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryText">
+            <color red="0.55294117647058827" green="0.52941176470588236" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tertiaryText">
+            <color red="0.71764705882352942" green="0.68627450980392157" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

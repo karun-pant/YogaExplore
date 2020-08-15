@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingsAndBookmarkView" customModule="YogaExplore" customModuleProvider="target">
+            <connections>
+                <outlet property="bookmarkImageView" destination="Zpf-66-4fj" id="OXI-c7-Dwx"/>
+                <outlet property="contentView" destination="edM-Xm-SBl" id="Zca-BI-khL"/>
+                <outlet property="ratingLabel" destination="WV4-Xx-66l" id="MxX-Lc-WL5"/>
+                <outlet property="starStackView" destination="316-IM-b4M" id="7bQ-YE-bb7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edM-Xm-SBl" userLabel="RatingContainer">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-ON-q52">
+                    <rect key="frame" x="25" y="12" width="41.5" height="16.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="41.5" id="r87-V1-uop"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="mainText"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="316-IM-b4M">
+                    <rect key="frame" x="25" y="34.5" width="90" height="14"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-Y5-ktC" customClass="StarIconButton" customModule="YogaExplore" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="3ye-1Q-JuI"/>
+                            </constraints>
+                            <state key="normal" image="star"/>
+                            <connections>
+                                <action selector="handleRatingTapWithSender:" destination="-1" eventType="touchUpInside" id="Sph-Bu-ulZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kE-2f-qWc" customClass="StarIconButton" customModule="YogaExplore" customModuleProvider="target">
+                            <rect key="frame" x="19" y="0.0" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="OG0-XW-KXW"/>
+                            </constraints>
+                            <state key="normal" image="star"/>
+                            <connections>
+                                <action selector="handleRatingTapWithSender:" destination="-1" eventType="touchUpInside" id="5BL-Iz-yqj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iim-IC-eXr" customClass="StarIconButton" customModule="YogaExplore" customModuleProvider="target">
+                            <rect key="frame" x="38" y="0.0" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="jpL-4Y-pvP"/>
+                            </constraints>
+                            <state key="normal" image="star"/>
+                            <connections>
+                                <action selector="handleRatingTapWithSender:" destination="-1" eventType="touchUpInside" id="RuK-WZ-hCW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRI-Rr-bCO" customClass="StarIconButton" customModule="YogaExplore" customModuleProvider="target">
+                            <rect key="frame" x="57" y="0.0" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="fiU-Bh-fE5"/>
+                            </constraints>
+                            <state key="normal" image="star"/>
+                            <connections>
+                                <action selector="handleRatingTapWithSender:" destination="-1" eventType="touchUpInside" id="iAI-my-EwI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-es-owS" customClass="StarIconButton" customModule="YogaExplore" customModuleProvider="target">
+                            <rect key="frame" x="76" y="0.0" width="14" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="14" id="kKm-yL-ouJ"/>
+                            </constraints>
+                            <state key="normal" image="star"/>
+                            <connections>
+                                <action selector="handleRatingTapWithSender:" destination="-1" eventType="touchUpInside" id="HEX-ti-bla"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="ur1-C6-tQ8"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBL-b3-4Nh">
+                    <rect key="frame" x="340" y="12.5" width="1" height="35"/>
+                    <color key="backgroundColor" name="componentBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Tq5-lt-fgC"/>
+                        <constraint firstAttribute="width" constant="1" id="qke-fE-0gi"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV4-Xx-66l">
+                    <rect key="frame" x="128" y="33.5" width="19.5" height="16.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="19.5" id="Wyc-rx-73c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
+                    <color key="textColor" name="componentBackground"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" highlightedImage="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="Zpf-66-4fj">
+                    <rect key="frame" x="366" y="18.5" width="23" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="23" id="84x-vS-qjg"/>
+                        <constraint firstAttribute="height" constant="23" id="yIT-ZN-rRj"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzp-aw-0Ua">
+                    <rect key="frame" x="355.5" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Wih-Kd-qXZ"/>
+                        <constraint firstAttribute="width" constant="44" id="y2w-QB-vRk"/>
+                    </constraints>
+                    <connections>
+                        <action selector="bookmarkIt:" destination="-1" eventType="touchUpInside" id="RG7-c7-MT3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="NBL-b3-4Nh" firstAttribute="centerY" secondItem="edM-Xm-SBl" secondAttribute="centerY" id="2q4-oV-BiV"/>
+                <constraint firstItem="v0b-ON-q52" firstAttribute="leading" secondItem="edM-Xm-SBl" secondAttribute="leading" constant="25" id="8gi-1k-Fjp"/>
+                <constraint firstAttribute="trailing" secondItem="Zpf-66-4fj" secondAttribute="trailing" constant="25" id="8mf-TH-E8O"/>
+                <constraint firstItem="316-IM-b4M" firstAttribute="leading" secondItem="v0b-ON-q52" secondAttribute="leading" id="JsU-8S-ztG"/>
+                <constraint firstItem="Hzp-aw-0Ua" firstAttribute="centerX" secondItem="Zpf-66-4fj" secondAttribute="centerX" id="P1n-DK-N5g"/>
+                <constraint firstItem="Zpf-66-4fj" firstAttribute="leading" secondItem="NBL-b3-4Nh" secondAttribute="trailing" constant="25" id="TER-RI-tiM"/>
+                <constraint firstItem="WV4-Xx-66l" firstAttribute="leading" secondItem="316-IM-b4M" secondAttribute="trailing" constant="13" id="WRm-4d-X6h"/>
+                <constraint firstItem="316-IM-b4M" firstAttribute="top" secondItem="v0b-ON-q52" secondAttribute="bottom" constant="6" id="cEU-px-lky"/>
+                <constraint firstItem="Hzp-aw-0Ua" firstAttribute="centerY" secondItem="Zpf-66-4fj" secondAttribute="centerY" id="iOC-lg-KYt"/>
+                <constraint firstItem="Zpf-66-4fj" firstAttribute="centerY" secondItem="edM-Xm-SBl" secondAttribute="centerY" id="mGI-39-LBg"/>
+                <constraint firstItem="v0b-ON-q52" firstAttribute="top" secondItem="edM-Xm-SBl" secondAttribute="top" constant="12" id="s9k-0P-x3R"/>
+                <constraint firstItem="WV4-Xx-66l" firstAttribute="centerY" secondItem="316-IM-b4M" secondAttribute="centerY" id="xup-z1-5ka"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="cm0-zH-b7f"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bookmark" width="100" height="100"/>
+        <image name="star" width="100" height="100"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="componentBackground">
+            <color red="0.72549019607843135" green="0.62745098039215685" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainText">
+            <color red="0.29411764705882354" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
