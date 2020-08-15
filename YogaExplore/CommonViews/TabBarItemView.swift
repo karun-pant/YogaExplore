@@ -36,16 +36,16 @@ final class TabBarItemView: UIView {
         icon.image = tabItem.item.icon(isSelected: tabItem.isSelected)
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.clipsToBounds = true
-        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.backgroundColor = Colors.background.color.cgColor
         self.addSubview(icon)
         self.addSubview(title)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         NSLayoutConstraint.activate([
-            icon.heightAnchor.constraint(equalToConstant: 25), // Fixed height for our tab item(25pts)
-            icon.widthAnchor.constraint(equalToConstant: 25), // Fixed width for our tab item icon
+            icon.heightAnchor.constraint(equalToConstant: 23),
+            icon.widthAnchor.constraint(equalToConstant: 23),
             icon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            icon.topAnchor.constraint(equalTo: self.topAnchor, constant: 8), // Position menu item icon 8pts from the top of it's parent view
+            icon.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 4),
             title.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -4),
             title.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: 8), // Position title label 4pts below item icon

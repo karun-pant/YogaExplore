@@ -21,8 +21,8 @@ class SeeReviewsTapableView: UIView {
     private func setupView() {
         let pencilImageView = UIImageView(image: UIImage(named: "pencil"))
         pencilImageView.translatesAutoresizingMaskIntoConstraints = false
-        pencilImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        pencilImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        pencilImageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        pencilImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         let title = UILabel()
         title.font = UbuntuFont.medium.sized(size: 20)
         title.text = "Reviews"

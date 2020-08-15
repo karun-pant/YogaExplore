@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Efficitur Resort Yoga centre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8El-qY-UaP">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="18.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="20"/>
                     <color key="textColor" name="mainText"/>
                     <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="sry-t2-Bj3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0KZ-6F-1Zj"/>
-                <constraint firstItem="sry-t2-Bj3" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="12" id="3sg-bd-ScR"/>
+                <constraint firstItem="sry-t2-Bj3" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="10" id="3sg-bd-ScR"/>
                 <constraint firstItem="Xdd-Df-cxM" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8FA-lx-e3b"/>
                 <constraint firstItem="mbn-XO-gBC" firstAttribute="leading" secondItem="sry-t2-Bj3" secondAttribute="trailing" constant="8" id="EMZ-Oe-sFR"/>
                 <constraint firstItem="8El-qY-UaP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EXw-D8-KRS"/>
@@ -75,7 +75,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xdd-Df-cxM" secondAttribute="bottom" id="ZSe-a3-6Pd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8El-qY-UaP" secondAttribute="trailing" id="a6n-z9-9fO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mbn-XO-gBC" secondAttribute="trailing" id="aGD-P1-yFp"/>
-                <constraint firstItem="mbn-XO-gBC" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="10" id="lhw-El-0d0"/>
+                <constraint firstItem="mbn-XO-gBC" firstAttribute="top" secondItem="8El-qY-UaP" secondAttribute="bottom" constant="8" id="lhw-El-0d0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

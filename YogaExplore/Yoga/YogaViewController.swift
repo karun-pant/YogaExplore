@@ -25,6 +25,7 @@ class YogaViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Colors.background.color
         scrollView.contentInsetAdjustmentBehavior = .never
         setupView()
     }
@@ -126,7 +127,7 @@ extension YogaViewController {
             ratingsAndBookmarkView.heightAnchor.constraint(equalToConstant: RatingsAndBookmarkView.Style.height),
             ratingsAndBookmarkView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: -RatingsAndBookmarkView.Style.height/2)
         ])
-        ratingsAndBookmarkView.capsuleAndDropShadow(boundingWidth: scrollContentView.frame.width)
+        ratingsAndBookmarkView.capsuleAndDropShadow(boundingWidth: view.frame.width)
     }
     private func setupAddressAndLocationView() {
         addressAndLocationView = AddressAndLocationView(
@@ -148,7 +149,7 @@ extension YogaViewController {
         scrollContentView.addSubview(scheduleView)
         scheduleView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            scheduleView.topAnchor.constraint(equalTo: addressAndLocationView.bottomAnchor, constant: 15),
+            scheduleView.topAnchor.constraint(equalTo: addressAndLocationView.bottomAnchor, constant: 10),
             scheduleView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: scrollViewContentMargin),
             scheduleView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollViewContentMargin)
         ])
@@ -172,7 +173,7 @@ extension YogaViewController {
             seeReviewsView.heightAnchor.constraint(equalToConstant: 30),
             seeReviewsView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor),
             seeReviewsView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor),
-            seeReviewsView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor, constant: -80)
+            seeReviewsView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor, constant: -95)
         ])
     }
 }

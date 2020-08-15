@@ -51,7 +51,7 @@ class DescriptionView: UIView {
             seperatorView.bottomAnchor.constraint(equalTo: bottomAnchor),
             seperatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             seperatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            seperatorView.heightAnchor.constraint(equalToConstant: 1),
+            seperatorView.heightAnchor.constraint(equalToConstant: 0.5),
         ])
     }
     

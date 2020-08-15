@@ -32,13 +32,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weekday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sw-yr-TE5">
-                    <rect key="frame" x="0.0" y="0.0" width="58" height="18.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="58" height="19"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
                     <color key="textColor" name="mainText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7U-J6-k9y">
-                    <rect key="frame" x="0.0" y="22.5" width="35.5" height="17"/>
+                    <rect key="frame" x="0.0" y="23" width="35.5" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="Cfz-rg-igs"/>
                     </constraints>
@@ -53,13 +53,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iK-f9-nuk">
-                    <rect key="frame" x="355.5" y="22.5" width="58.5" height="17"/>
+                    <rect key="frame" x="355.5" y="23" width="58.5" height="17"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
                     <color key="textColor" name="secondaryText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-Zs-w8t">
-                    <rect key="frame" x="0.0" y="49.5" width="92.5" height="22.5"/>
+                    <rect key="frame" x="0.0" y="50" width="92.5" height="22.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22.5" id="EQv-QP-Cdr"/>
                     </constraints>
@@ -68,10 +68,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpm-FS-meE">
-                    <rect key="frame" x="0.0" y="82" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="82.5" width="414" height="0.5"/>
                     <color key="backgroundColor" name="tertiaryText"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="wJB-ql-lAB"/>
+                        <constraint firstAttribute="height" constant="0.5" id="wJB-ql-lAB"/>
                     </constraints>
                 </view>
             </subviews>

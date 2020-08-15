@@ -28,8 +28,10 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
             viewControllers.append(tabItem.item.viewController)
             tabItems.append(tabItem)
         }
+        tabBar.barTintColor = .clear
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
         let frame = CGRect(origin: tabBar.frame.origin, size: .init(width: tabBar.frame.width, height: tabBarHeight))
-//        tabBar.isHidden = true
         customTabBar = BreadLoafTabBar(tabItems, frame: frame)
         customTabBar.translatesAutoresizingMaskIntoConstraints = false
         customTabBar.onItemTap = changeTab
@@ -39,7 +41,7 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
             self.customTabBar.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor),
             self.customTabBar.widthAnchor.constraint(equalToConstant: tabBar.frame.width),
             self.customTabBar.heightAnchor.constraint(equalToConstant: tabBarHeight),
-            self.customTabBar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor)
+            self.customTabBar.bottomAnchor.constraint(equalTo: tabBar.safeAreaLayoutGuide.bottomAnchor)
         ])
         view.layoutIfNeeded()
         self.selectedIndex = 0
