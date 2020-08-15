@@ -35,7 +35,6 @@
 		C0840B1224E2CCCA00639893 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840B1124E2CCCA00639893 /* ArticlesViewController.swift */; };
 		C0840B1824E2CE5900639893 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840B1724E2CE5900639893 /* StartViewController.swift */; };
 		C0840B2124E2D2C900639893 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0840B2024E2D2C900639893 /* Colors.xcassets */; };
-		C0840B2A24E2D82B00639893 /* UIViewRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840B2924E2D82B00639893 /* UIViewRounding.swift */; };
 		C0840B2C24E2D93400639893 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840B2B24E2D93400639893 /* MainTabbarController.swift */; };
 		C0EC8CDF24E70BD4009517EB /* RatingsAndBookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8CDE24E70BD4009517EB /* RatingsAndBookmarkView.xib */; };
 		C0EC8CE524E70C3B009517EB /* NIBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */; };
@@ -96,7 +95,6 @@
 		C0840B1124E2CCCA00639893 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		C0840B1724E2CE5900639893 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C0840B2024E2D2C900639893 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		C0840B2924E2D82B00639893 /* UIViewRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRounding.swift; sourceTree = "<group>"; };
 		C0840B2B24E2D93400639893 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		C0EC8CDE24E70BD4009517EB /* RatingsAndBookmarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingsAndBookmarkView.xib; sourceTree = "<group>"; };
 		C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBDesignableView.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				C056B92924E695CC00BFCAFC /* Fonts.swift */,
 				C056B92E24E6BCC500BFCAFC /* Colors.swift */,
 				C056B92B24E6A01F00BFCAFC /* ArrayExtension.swift */,
-				C0840B2924E2D82B00639893 /* UIViewRounding.swift */,
 				C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */,
 				C05CE60624E7AE7000C77E94 /* NavigationBarCustomizable.swift */,
 			);
@@ -433,7 +430,6 @@
 				C000B83824E84A3A0022A556 /* SeeReviewsTapableView.swift in Sources */,
 				C0840B1024E2CC6D00639893 /* SettingsViewController.swift in Sources */,
 				C0EC8CED24E723C7009517EB /* StarIconButton.swift in Sources */,
-				C0840B2A24E2D82B00639893 /* UIViewRounding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

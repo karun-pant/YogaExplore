@@ -130,10 +130,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-s4-WnB">
-                                <rect key="frame" x="112.5" y="335.5" width="150" height="40"/>
+                                <rect key="frame" x="112.5" y="333" width="150" height="45"/>
                                 <color key="backgroundColor" name="componentBackground"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="HBb-e6-APt"/>
+                                    <constraint firstAttribute="height" constant="45" id="HBb-e6-APt"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dI2-Mu-9EY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
@@ -143,10 +143,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
-                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerX" secondItem="4ti-Tj-BWP" secondAttribute="centerX" id="Pjg-wn-tEF"/>
-                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerY" secondItem="4ti-Tj-BWP" secondAttribute="centerY" id="qbh-BD-TMf"/>
+                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerX" secondItem="4ti-Tj-BWP" secondAttribute="centerX" id="tXX-i3-3Uz"/>
+                            <constraint firstItem="lFw-s4-WnB" firstAttribute="centerY" secondItem="4ti-Tj-BWP" secondAttribute="centerY" id="wZv-jR-SXN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4ti-Tj-BWP"/>
                     </view>
@@ -154,7 +154,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="0eC-ns-M6A"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnStart" destination="lFw-s4-WnB" id="40z-no-Acj"/>
+                        <outlet property="startButton" destination="lFw-s4-WnB" id="40z-no-Acj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPN-gp-cR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -181,6 +181,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="componentBackground">
             <color red="0.72549019607843135" green="0.62745098039215685" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
