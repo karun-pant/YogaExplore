@@ -10,9 +10,11 @@ import UIKit
 
 class ChatsViewController: UIViewController {
 
+    @IBOutlet var pageName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        pageName.text = self.title
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true

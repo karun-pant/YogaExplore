@@ -49,6 +49,11 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
     }
     
     func changeTab(tab: Int) {
+        guard let fromView = selectedViewController?.view,
+            let toView = viewControllers?[safe: tab]?.view else {
+          return
+        }
+        UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
         self.selectedIndex = tab
     }
 }

@@ -12,9 +12,6 @@
         <array key="Ubuntu-Bold.ttf">
             <string>Ubuntu-Bold</string>
         </array>
-        <array key="Ubuntu-Medium.ttf">
-            <string>Ubuntu-Medium</string>
-        </array>
         <array key="Ubuntu-Regular.ttf">
             <string>Ubuntu-Regular</string>
         </array>
@@ -23,7 +20,6 @@
         <!--Yoga View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="yoga" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="YogaViewController" customModule="YogaExplore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -62,6 +58,7 @@
                         <outlet property="scrollView" destination="2P5-EE-CYn" id="jJd-I8-0Oz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951.2" y="-24.7376311844078"/>
         </scene>
@@ -73,24 +70,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPg-e8-13v">
-                                <rect key="frame" x="136" y="194" width="44" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page is not implemented yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPg-e8-13v">
+                                <rect key="frame" x="16" y="129" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="17"/>
+                                <color key="textColor" name="secondaryText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-yF-gTP">
-                                <rect key="frame" x="136" y="233" width="45" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt2-yF-gTP">
+                                <rect key="frame" x="16" y="55" width="343" height="29"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="25"/>
+                                <color key="textColor" name="componentBackground"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="fPg-e8-13v" secondAttribute="trailing" constant="16" id="6R5-A5-RP8"/>
+                            <constraint firstItem="Vt2-yF-gTP" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="DJA-Bf-vr4"/>
+                            <constraint firstItem="Vt2-yF-gTP" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="55" id="Dz1-rr-vpa"/>
+                            <constraint firstItem="fPg-e8-13v" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="QNh-AE-ksf"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Vt2-yF-gTP" secondAttribute="trailing" constant="16" id="Sqk-CX-aE8"/>
+                            <constraint firstItem="fPg-e8-13v" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="mOU-J4-Ob5"/>
+                            <constraint firstItem="fPg-e8-13v" firstAttribute="top" secondItem="Vt2-yF-gTP" secondAttribute="bottom" constant="45" id="mdl-rl-rfX"/>
+                            <constraint firstItem="Vt2-yF-gTP" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="ncd-DU-Cb3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
+                    <connections>
+                        <outlet property="pageName" destination="Vt2-yF-gTP" id="Qbz-Am-wiC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,6 +183,9 @@
     <resources>
         <namedColor name="componentBackground">
             <color red="0.72549019607843135" green="0.62745098039215685" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryText">
+            <color red="0.55294117647058827" green="0.52941176470588236" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
