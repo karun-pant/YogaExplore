@@ -11,19 +11,44 @@ import UIKit
 class RatingsAndBookmarkView: NIBDesignableView {
     struct Style {
         static let margin: CGFloat = 40
-        static let height: CGFloat = 60
         static func estimatedSize(_ boundingWidth: CGFloat) -> CGSize {
-            return .init(width: boundingWidth - (2 * margin), height: height)
+            return .init(width: boundingWidth - (2 * margin), height: 60)
         }
     }
-    @IBOutlet var ratingLabel: UILabel!
-    @IBOutlet var starStackView: UIStackView!
-    @IBOutlet var bookmarkImageView: UIImageView!
+    @IBOutlet private var ratingLabel: UILabel!
+    @IBOutlet private var starStackView: UIStackView!
+    @IBOutlet private var bookmarkImageView: UIImageView!
     var onBookmark: ((Bool) -> Void)?
     
-    init?(rating: Double, isBookmarked: Bool) {
+    private (set) var rating: Double = 0 {
+        didSet {
+            let rating = RatingsAndBookmarkView.boundrifyRating(
+                rating: self.rating,
+                maxRatingStarsCount: starStackView.arrangedSubviews.count)
+            ratingLabel.text = String(format: "%0.1f", rating)
+            // this assumes we have a highlighted image for this
+            // set highlighted image and use that for changing star state
+            // highlightedImage will be selected
+            // image will be normal state
+            let maxRatingIndex = Int(rating)
+            starStackView.arrangedSubviews.enumerated().forEach {
+                guard let starIcon = $0.element as? UIImageView else {
+                    return
+                }
+                starIcon.isHighlighted = $0.offset < maxRatingIndex
+            }
+        }
+    }
+    private (set) var isBookmarked: Bool = false {
+        didSet {
+            bookmarkImageView.isHighlighted.toggle()
+            onBookmark?(bookmarkImageView.isHighlighted)
+        }
+    }
+    
+    init(rating: Double, isBookmarked: Bool) {
         super.init(contentClass: RatingsAndBookmarkView.self)
-        bookmarkImageView.isHighlighted = isBookmarked
+        self.isBookmarked = isBookmarked
         starStackView.arrangedSubviews.enumerated().forEach {
             guard let starIconButton = $0.element as? StarIconButton else {
                 assertionFailure("Did you change type of star icon in starStackView 🤔")
@@ -38,23 +63,26 @@ class RatingsAndBookmarkView: NIBDesignableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func capsuleAndDropShadow(boundingWidth: CGFloat) {
+    func capsuleAndDropShadow(boundingWidth: CGFloat, isShadowNeeded: Bool = true) {
         contentView.backgroundColor = Colors.background.color
         let shapeSize = Style.estimatedSize(boundingWidth)
         let radius = shapeSize.height/2
+        contentView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = radius
         let shapePath = UIBezierPath(
             roundedRect: .init(origin: .zero, size: shapeSize),
             cornerRadius: radius)
-        let shapeLayerMask = CAShapeLayer()
-        shapeLayerMask.path = shapePath.cgPath
-        contentView.layer.masksToBounds = true
-        contentView.layer.mask = shapeLayerMask
-        layer.shadowPath = shapePath.cgPath
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 20
-        layer.shadowOffset = .zero
-        layer.shadowOpacity = 0.1
-        layer.masksToBounds = false
+        if isShadowNeeded {
+            layer.shadowPath = shapePath.cgPath
+            layer.shadowColor = UIColor.black.cgColor
+            layer.shadowRadius = 20
+            layer.shadowOffset = .zero
+            layer.shadowOpacity = 0.1
+            layer.masksToBounds = false
+        } else {
+            layer.shadowPath = nil
+            layer.shadowOpacity = 0
+        }
     }
     
     @IBAction private func handleRatingTap(sender: StarIconButton) {
@@ -62,27 +90,12 @@ class RatingsAndBookmarkView: NIBDesignableView {
     }
     
     private func updateRating(rating: Double) {
-        let rating = RatingsAndBookmarkView.boundrifyRating(
-            rating: rating,
-            maxRatingStarsCount: starStackView.arrangedSubviews.count)
-        ratingLabel.text = String(format: "%0.1f", rating)
-        // this assumes we have a highlighted image for this
-        // set highlighted image and use that for changing star state
-        // highlightedImage will be selected
-        // image will be normal state
-        let maxRatingIndex = Int(rating)
-        starStackView.arrangedSubviews.enumerated().forEach {
-            guard let starIcon = $0.element as? UIImageView else {
-                return
-            }
-            starIcon.isHighlighted = $0.offset < maxRatingIndex
-        }
+        self.rating = rating
     }
     
     
     @IBAction func bookmarkIt(_ sender: Any) {
-        bookmarkImageView.isHighlighted.toggle()
-        onBookmark?(bookmarkImageView.isHighlighted)
+        isBookmarked.toggle()
     }
     
     private static func boundrifyRating(rating: Double, maxRatingStarsCount: Int) -> Double {

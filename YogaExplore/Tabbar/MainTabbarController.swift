@@ -57,3 +57,4 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
         self.selectedIndex = tab
     }
 }
+

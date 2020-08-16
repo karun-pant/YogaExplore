@@ -11,8 +11,16 @@ import CoreLocation
 
 class YogaViewController: UIViewController {
     
-    private var ratingsAndBookmarkView: RatingsAndBookmarkView!
-    private var topImageView: UIImageView!
+    lazy var topImageView: UIImageView = {
+        let topImageSize: CGSize = .init(width: view.frame.width,
+                                         height: view.frame.height * 0.5 + 17)
+        let topImageView = UIImageView(image: UIImage(named: "topImage"))
+        topImageView.frame = .init(origin: .zero, size: topImageSize)
+        topImageView.contentMode = .scaleAspectFill
+        topImageView.breadloafed()
+        return topImageView
+    }()
+    let ratingsAndBookmarkView: RatingsAndBookmarkView = RatingsAndBookmarkView(rating: 5, isBookmarked: true)
     private var addressAndLocationView: AddressAndLocationView!
     private var scheduleView: ScheduleView!
     private var descriptionView: DescriptionView!
@@ -55,49 +63,19 @@ class YogaViewController: UIViewController {
 
 extension YogaViewController {
     private func setupGradientNavigationView() {
-        let gradientViewSize: CGSize = .init(width: view.frame.width,
-                                         height: 120)
-        let gradientView = UIView(frame: .zero)
-        let backButtonView = UIView(frame: .zero)
-        let backImageView = UIImageView(image: UIImage(named: "back"))
-        backImageView.contentMode = .scaleAspectFit
-        backButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBack)))
-        backButtonView.addSubview(backImageView)
-        gradientView.addSubview(backButtonView)
-        view.addSubview(gradientView)
-        backImageView.translatesAutoresizingMaskIntoConstraints = false
-        backButtonView.translatesAutoresizingMaskIntoConstraints = false
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        let barBackButtonView = BarBackButtonView(width: view.frame.width)
+        barBackButtonView.onBackTap = handleBack
+        view.addSubview(barBackButtonView)
         NSLayoutConstraint.activate([
-            gradientView.topAnchor.constraint(equalTo: view.topAnchor),
-            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gradientView.heightAnchor.constraint(equalToConstant: gradientViewSize.height),
-            // back button view
-            backImageView.heightAnchor.constraint(equalToConstant: 25),
-            backImageView.widthAnchor.constraint(equalToConstant: 25),
-            backImageView.centerXAnchor.constraint(equalTo: backButtonView.centerXAnchor),
-            backImageView.bottomAnchor.constraint(equalTo: backButtonView.bottomAnchor),
-            backButtonView.heightAnchor.constraint(equalToConstant: 50),
-            backButtonView.widthAnchor.constraint(equalToConstant: 50),
-            backButtonView.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 10),
-            backButtonView.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 35)
+            barBackButtonView.topAnchor.constraint(equalTo: view.topAnchor),
+            barBackButtonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            barBackButtonView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            barBackButtonView.heightAnchor.constraint(equalToConstant: barBackButtonView.frame.height)
         ])
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = [UIColor(white: 0, alpha: 0.70).cgColor, UIColor.clear]
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = CGPoint(x: 1.0, y: 0.0)
-        gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradient.frame = CGRect(origin: .zero, size: gradientViewSize)
-        view.layer.insertSublayer(gradient, at: 1)
-        view.bringSubviewToFront(gradientView)
+        view.bringSubviewToFront(barBackButtonView)
     }
     private func setupTopImageView() {
-        let height = view.frame.height * 0.5 + 17
-        let topImageSize: CGSize = .init(width: view.frame.width,
-                                         height: height)
-        topImageView = UIImageView(image: UIImage(named: "topImage"))
-        topImageView.contentMode = .scaleAspectFill
+        let topImageSize: CGSize = topImageView.frame.size
         scrollContentView.addSubview(topImageView)
         topImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -107,27 +85,20 @@ extension YogaViewController {
             topImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor),
             topImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor)
         ])
-        let radius = topImageSize.width * 0.125
-        let shapePath = UIBezierPath(roundedRect: .init(origin: .zero, size: topImageSize),
-                                     byRoundingCorners: [.bottomLeft, .bottomRight],
-                                     cornerRadii: .init(width: radius, height: radius))
-        let shapeLayerMask = CAShapeLayer()
-        shapeLayerMask.path = shapePath.cgPath
-        topImageView.layer.mask = shapeLayerMask
-        topImageView.layer.masksToBounds = true
+        topImageView.isHidden = true
     }
     private func setupRatingsAndBookmarkView() {
-        ratingsAndBookmarkView = RatingsAndBookmarkView(rating: 5,
-                                                        isBookmarked: true)
         scrollContentView.addSubview(ratingsAndBookmarkView)
         ratingsAndBookmarkView.translatesAutoresizingMaskIntoConstraints = false
+        let height = RatingsAndBookmarkView.Style.estimatedSize(view.frame.width).height
         NSLayoutConstraint.activate([
             ratingsAndBookmarkView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: RatingsAndBookmarkView.Style.margin),
             ratingsAndBookmarkView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -RatingsAndBookmarkView.Style.margin),
-            ratingsAndBookmarkView.heightAnchor.constraint(equalToConstant: RatingsAndBookmarkView.Style.height),
-            ratingsAndBookmarkView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: -RatingsAndBookmarkView.Style.height/2)
+            ratingsAndBookmarkView.heightAnchor.constraint(equalToConstant: height),
+            ratingsAndBookmarkView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: -height/2)
         ])
         ratingsAndBookmarkView.capsuleAndDropShadow(boundingWidth: view.frame.width)
+        ratingsAndBookmarkView.isHidden = true
     }
     private func setupAddressAndLocationView() {
         addressAndLocationView = AddressAndLocationView(
@@ -175,5 +146,15 @@ extension YogaViewController {
             seeReviewsView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor),
             seeReviewsView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor, constant: -95)
         ])
+    }
+}
+
+//MARK:- YogaTransitionAnimatable
+
+extension YogaViewController: YogaTransitionAnimatable {
+    
+    func didCompletePushTransition() {
+        topImageView.isHidden = false
+        ratingsAndBookmarkView.isHidden = false
     }
 }

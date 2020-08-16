@@ -9,7 +9,7 @@
 import UIKit
 
 class StartViewController: UIViewController, NavigationBarCustomizable {
-
+    
     @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
