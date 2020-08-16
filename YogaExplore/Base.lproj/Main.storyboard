@@ -30,9 +30,10 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="667" translatesAutoresizingMaskIntoConstraints="NO" id="2NW-an-iFg" userLabel="RatingsAndBookMarkContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="background"/>
                                 <constraints>
                                     <constraint firstItem="2NW-an-iFg" firstAttribute="leading" secondItem="ecr-Gm-QSK" secondAttribute="leading" id="2bw-q1-BRp"/>
                                     <constraint firstItem="2NW-an-iFg" firstAttribute="bottom" secondItem="ecr-Gm-QSK" secondAttribute="bottom" id="6Bw-6L-NFw"/>
@@ -44,7 +45,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Uxd-p8-Ioj"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="2P5-EE-CYn" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="6TR-vS-fPb"/>
                             <constraint firstItem="2P5-EE-CYn" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="Awh-2f-62B"/>
@@ -83,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="fPg-e8-13v" secondAttribute="trailing" constant="16" id="6R5-A5-RP8"/>
                             <constraint firstItem="Vt2-yF-gTP" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="DJA-Bf-vr4"/>
