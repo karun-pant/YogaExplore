@@ -3,11 +3,17 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 14/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
 
+/// This class should be inherited by all NIb based views, this gives them independence of creating there own init without taking care of nitty gritties of creating a view from bundle.
+/// Usage:
+/// 1. Assign NIBDesignableView's subclass (view you wanna design in NIB) to FileOwner.
+/// 2. Connect FileOwner's contentView to view in NIB
+/// 3. Call init(contentClass: UIView.Type, nibName: String? = nil ) from your initializer.
+/// 4. Use your initializer to get NIB view.
 class NIBDesignableView: UIView {
     @IBOutlet var contentView: UIView!
     

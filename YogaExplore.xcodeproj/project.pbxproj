@@ -22,8 +22,8 @@
 		C05CE60724E7AE7000C77E94 /* NavigationBarCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CE60624E7AE7000C77E94 /* NavigationBarCustomizable.swift */; };
 		C05CE60C24E7F3F700C77E94 /* AddressAndLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CE60B24E7F3F700C77E94 /* AddressAndLocationView.swift */; };
 		C05CE60E24E7F40900C77E94 /* AddressAndLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05CE60D24E7F40900C77E94 /* AddressAndLocationView.xib */; };
-		C05CE61024E81A6400C77E94 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CE60F24E81A6400C77E94 /* ScheduleView.swift */; };
-		C05CE61624E8203A00C77E94 /* ScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05CE61524E8203A00C77E94 /* ScheduleView.xib */; };
+		C05CE61024E81A6400C77E94 /* TimingsAndScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05CE60F24E81A6400C77E94 /* TimingsAndScheduleView.swift */; };
+		C05CE61624E8203A00C77E94 /* TimingsAndScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C05CE61524E8203A00C77E94 /* TimingsAndScheduleView.xib */; };
 		C0840ADE24E2CB5B00639893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840ADD24E2CB5B00639893 /* AppDelegate.swift */; };
 		C0840AE224E2CB5B00639893 /* YogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840AE124E2CB5B00639893 /* YogaViewController.swift */; };
 		C0840AE424E2CB5B00639893 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840AE324E2CB5B00639893 /* ChatsViewController.swift */; };
@@ -39,9 +39,8 @@
 		C0840B2C24E2D93400639893 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0840B2B24E2D93400639893 /* MainTabbarController.swift */; };
 		C09ACCFE24E92EB80048A187 /* YogaPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACCFD24E92EB80048A187 /* YogaPushAnimator.swift */; };
 		C09ACD0224E941730048A187 /* YogaPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0124E941730048A187 /* YogaPopAnimator.swift */; };
-		C09ACD0624E95ECA0048A187 /* ImageViewRoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0524E95ECA0048A187 /* ImageViewRoundable.swift */; };
 		C09ACD0824E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0724E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift */; };
-		C09ACD0A24E9AEB30048A187 /* YogaTransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0924E9AEB30048A187 /* YogaTransitionAnimatable.swift */; };
+		C09ACD0A24E9AEB30048A187 /* YogaNavigationAnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0924E9AEB30048A187 /* YogaNavigationAnimatorProtocol.swift */; };
 		C09ACD0C24E9B1A00048A187 /* BarBackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09ACD0B24E9B1A00048A187 /* BarBackButtonView.swift */; };
 		C0EC8CDF24E70BD4009517EB /* RatingsAndBookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC8CDE24E70BD4009517EB /* RatingsAndBookmarkView.xib */; };
 		C0EC8CE524E70C3B009517EB /* NIBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */; };
@@ -83,8 +82,8 @@
 		C05CE60624E7AE7000C77E94 /* NavigationBarCustomizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCustomizable.swift; sourceTree = "<group>"; };
 		C05CE60B24E7F3F700C77E94 /* AddressAndLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAndLocationView.swift; sourceTree = "<group>"; };
 		C05CE60D24E7F40900C77E94 /* AddressAndLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressAndLocationView.xib; sourceTree = "<group>"; };
-		C05CE60F24E81A6400C77E94 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		C05CE61524E8203A00C77E94 /* ScheduleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleView.xib; sourceTree = "<group>"; };
+		C05CE60F24E81A6400C77E94 /* TimingsAndScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingsAndScheduleView.swift; sourceTree = "<group>"; };
+		C05CE61524E8203A00C77E94 /* TimingsAndScheduleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimingsAndScheduleView.xib; sourceTree = "<group>"; };
 		C0840ADA24E2CB5B00639893 /* YogaExplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaExplore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0840ADD24E2CB5B00639893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0840AE124E2CB5B00639893 /* YogaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaViewController.swift; sourceTree = "<group>"; };
@@ -106,9 +105,8 @@
 		C0840B2B24E2D93400639893 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		C09ACCFD24E92EB80048A187 /* YogaPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPushAnimator.swift; sourceTree = "<group>"; };
 		C09ACD0124E941730048A187 /* YogaPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPopAnimator.swift; sourceTree = "<group>"; };
-		C09ACD0524E95ECA0048A187 /* ImageViewRoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewRoundable.swift; sourceTree = "<group>"; };
 		C09ACD0724E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaNavigationAnimationHelper.swift; sourceTree = "<group>"; };
-		C09ACD0924E9AEB30048A187 /* YogaTransitionAnimatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaTransitionAnimatable.swift; sourceTree = "<group>"; };
+		C09ACD0924E9AEB30048A187 /* YogaNavigationAnimatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaNavigationAnimatorProtocol.swift; sourceTree = "<group>"; };
 		C09ACD0B24E9B1A00048A187 /* BarBackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarBackButtonView.swift; sourceTree = "<group>"; };
 		C0EC8CDE24E70BD4009517EB /* RatingsAndBookmarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingsAndBookmarkView.xib; sourceTree = "<group>"; };
 		C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBDesignableView.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				C056B92B24E6A01F00BFCAFC /* ArrayExtension.swift */,
 				C0EC8CE424E70C3B009517EB /* NIBDesignableView.swift */,
 				C05CE60624E7AE7000C77E94 /* NavigationBarCustomizable.swift */,
-				C09ACD0524E95ECA0048A187 /* ImageViewRoundable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -173,8 +170,8 @@
 				C0EC8CDE24E70BD4009517EB /* RatingsAndBookmarkView.xib */,
 				C05CE60B24E7F3F700C77E94 /* AddressAndLocationView.swift */,
 				C05CE60D24E7F40900C77E94 /* AddressAndLocationView.xib */,
-				C05CE60F24E81A6400C77E94 /* ScheduleView.swift */,
-				C05CE61524E8203A00C77E94 /* ScheduleView.xib */,
+				C05CE60F24E81A6400C77E94 /* TimingsAndScheduleView.swift */,
+				C05CE61524E8203A00C77E94 /* TimingsAndScheduleView.xib */,
 				C000B83524E831D90022A556 /* DescriptionView.swift */,
 				C000B83724E84A3A0022A556 /* SeeReviewsTapableView.swift */,
 				C09ACD0B24E9B1A00048A187 /* BarBackButtonView.swift */,
@@ -307,7 +304,7 @@
 			children = (
 				C09ACCFD24E92EB80048A187 /* YogaPushAnimator.swift */,
 				C09ACD0124E941730048A187 /* YogaPopAnimator.swift */,
-				C09ACD0924E9AEB30048A187 /* YogaTransitionAnimatable.swift */,
+				C09ACD0924E9AEB30048A187 /* YogaNavigationAnimatorProtocol.swift */,
 				C09ACD0724E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift */,
 			);
 			path = YogaVCTransitions;
@@ -434,7 +431,7 @@
 				C05CE60E24E7F40900C77E94 /* AddressAndLocationView.xib in Resources */,
 				C0840AE924E2CB5F00639893 /* Assets.xcassets in Resources */,
 				C056B97524E6EFEE00BFCAFC /* Ubuntu-Regular.ttf in Resources */,
-				C05CE61624E8203A00C77E94 /* ScheduleView.xib in Resources */,
+				C05CE61624E8203A00C77E94 /* TimingsAndScheduleView.xib in Resources */,
 				C0840AE724E2CB5B00639893 /* Main.storyboard in Resources */,
 				C0EC8CDF24E70BD4009517EB /* RatingsAndBookmarkView.xib in Resources */,
 			);
@@ -467,16 +464,15 @@
 				C09ACD0C24E9B1A00048A187 /* BarBackButtonView.swift in Sources */,
 				C056B92F24E6BCC500BFCAFC /* Colors.swift in Sources */,
 				C056B92C24E6A01F00BFCAFC /* ArrayExtension.swift in Sources */,
-				C09ACD0A24E9AEB30048A187 /* YogaTransitionAnimatable.swift in Sources */,
+				C09ACD0A24E9AEB30048A187 /* YogaNavigationAnimatorProtocol.swift in Sources */,
 				C0840B1824E2CE5900639893 /* StartViewController.swift in Sources */,
 				C09ACCFE24E92EB80048A187 /* YogaPushAnimator.swift in Sources */,
 				C0EC8CE524E70C3B009517EB /* NIBDesignableView.swift in Sources */,
 				C000B83624E831D90022A556 /* DescriptionView.swift in Sources */,
 				C056B92A24E695CC00BFCAFC /* Fonts.swift in Sources */,
-				C09ACD0624E95ECA0048A187 /* ImageViewRoundable.swift in Sources */,
 				C0840AE224E2CB5B00639893 /* YogaViewController.swift in Sources */,
 				C0840ADE24E2CB5B00639893 /* AppDelegate.swift in Sources */,
-				C05CE61024E81A6400C77E94 /* ScheduleView.swift in Sources */,
+				C05CE61024E81A6400C77E94 /* TimingsAndScheduleView.swift in Sources */,
 				C0840B1224E2CCCA00639893 /* ArticlesViewController.swift in Sources */,
 				C09ACD0824E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift in Sources */,
 				C0EC8CF124E79B8E009517EB /* MainNavigationController.swift in Sources */,
@@ -670,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExplore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iswiftcoder.YogaExplore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -689,7 +685,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExplore;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iswiftcoder.YogaExplore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -709,7 +705,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExploreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icodeswift.YogaExploreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -730,7 +726,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExploreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icodeswift.YogaExploreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,7 +745,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExploreUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icodeswift.YogaExploreUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -768,7 +764,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digitalminds.YogaExploreUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icodeswift.YogaExploreUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

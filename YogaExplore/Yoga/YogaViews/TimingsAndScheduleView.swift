@@ -3,18 +3,18 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 15/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
 
-class ScheduleView: NIBDesignableView {
+class TimingsAndScheduleView: NIBDesignableView {
     @IBOutlet var weekdayTitleLabel: UILabel!
     @IBOutlet var weekendTitleLabel: UILabel!
     @IBOutlet var weekdayTimeLabel: UILabel!
     @IBOutlet var weekendTimeLabel: UILabel!
     init() {
-        super.init(contentClass: ScheduleView.self)
+        super.init(contentClass: TimingsAndScheduleView.self)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

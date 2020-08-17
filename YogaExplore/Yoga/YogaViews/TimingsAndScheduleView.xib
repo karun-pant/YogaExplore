@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScheduleView" customModule="YogaExplore" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimingsAndScheduleView" customModule="YogaExplore" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="Bs8-OD-bC7" id="Fen-vO-E4U"/>
                 <outlet property="weekdayTimeLabel" destination="y7U-J6-k9y" id="dcb-ik-JfF"/>

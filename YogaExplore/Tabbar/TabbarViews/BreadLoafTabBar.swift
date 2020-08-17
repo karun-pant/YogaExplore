@@ -3,7 +3,7 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 13/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
@@ -42,38 +42,13 @@ class BreadLoafTabBar: UIView {
         NSLayoutConstraint.activate([
             tabsStackView.leadingAnchor.constraint(equalTo: breadLoafView.leadingAnchor, constant: 10),
             tabsStackView.trailingAnchor.constraint(equalTo: breadLoafView.trailingAnchor, constant: -10),
-//            tabsStackView.topAnchor.constraint(equalTo: breadLoafView.topAnchor, constant: 10),
             tabsStackView.centerYAnchor.constraint(equalTo: breadLoafView.centerYAnchor),
             tabsStackView.heightAnchor.constraint(equalToConstant: TabBarItemView.itemHeight)
         ])
         activeItem = tabItems.first(where: { $0.isSelected })
     }
     
-    func handleItemTap(item: TabItem) {
-        guard let activeItem = activeItem else {
-            assertionFailure("activeItem is not found, now why would taht be. Did you not set it 🤔")
-            return
-        }
-        switchTab(from: activeItem, to: item)
-    }
-    
-    func switchTab(from fromItem: TabItem, to toItem: TabItem) {
-        guard toItem.position != fromItem.position else {
-            return
-        }
-        let updatedToTabItem = TabItem(item: toItem.item, isSelected: true, position: toItem.position)
-        let updatedFromTabItem = TabItem(item: fromItem.item, isSelected: false, position: fromItem.position)
-        guard let toItemView = tabsStackView.arrangedSubviews[safe: toItem.position] as? TabBarItemView,
-            let fromItemView = tabsStackView.arrangedSubviews[safe: fromItem.position] as? TabBarItemView else {
-                assertionFailure("How did this happen, did you fill something else in stack 😭")
-                return
-        }
-        toItemView.updateView(with: updatedToTabItem)
-        fromItemView.updateView(with: updatedFromTabItem)
-        activeItem = toItem
-        onItemTap?(toItem.position)
-    }
-    
+    /// Creates a view with top corners rounded with a radius 12.5% of bounding width
     private func breadLoafedView() -> UIView {
         let maskedBreadLoafView = UIView(frame: bounds)
         maskedBreadLoafView.backgroundColor = Colors.background.color
@@ -91,5 +66,32 @@ class BreadLoafTabBar: UIView {
         return maskedBreadLoafView
     }
     
+    // MARK:- Handle tab items tap
+    
+    func handleItemTap(item: TabItem) {
+        guard let activeItem = activeItem else {
+            assertionFailure("activeItem is not found, now why would taht be. Did you not set it 🤔")
+            return
+        }
+        switchTab(from: activeItem, to: item)
+    }
+    
+    func switchTab(from fromItem: TabItem, to toItem: TabItem) {
+        guard toItem.position != fromItem.position else {
+            // same item tapped again
+            return
+        }
+        // update selection for from and to tabItem, and call update view on them.
+        let updatedToTabItem = TabItem(item: toItem.item, isSelected: true, position: toItem.position)
+        let updatedFromTabItem = TabItem(item: fromItem.item, isSelected: false, position: fromItem.position)
+        guard let toItemView = tabsStackView.arrangedSubviews[safe: toItem.position] as? TabBarItemView,
+            let fromItemView = tabsStackView.arrangedSubviews[safe: fromItem.position] as? TabBarItemView else {
+                assertionFailure("How did this happen, did you fill something else in stack 😭")
+                return
+        }
+        toItemView.updateView(with: updatedToTabItem)
+        fromItemView.updateView(with: updatedFromTabItem)
+        activeItem = toItem
+        onItemTap?(toItem.position)
+    }
 }
-

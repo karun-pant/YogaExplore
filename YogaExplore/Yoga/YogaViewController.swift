@@ -3,7 +3,7 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 8/11/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
@@ -19,8 +19,9 @@ class YogaViewController: UIViewController {
         return topImageView
     }()
     let ratingsAndBookmarkView: RatingsAndBookmarkView = RatingsAndBookmarkView(rating: 5, isBookmarked: true)
+    private var barBackButtonView: BarBackButtonView!
     private var addressAndLocationView: AddressAndLocationView!
-    private var scheduleView: ScheduleView!
+    private var scheduleView: TimingsAndScheduleView!
     private var descriptionView: DescriptionView!
     private var seeReviewsView: SeeReviewsTapableView!
     @IBOutlet var scrollView: UIScrollView!
@@ -60,8 +61,9 @@ class YogaViewController: UIViewController {
 // MARK:- View setup
 
 extension YogaViewController {
+    
     private func setupGradientNavigationView() {
-        let barBackButtonView = BarBackButtonView(width: view.frame.width)
+        barBackButtonView = BarBackButtonView(width: view.frame.width)
         barBackButtonView.onBackTap = handleBack
         view.addSubview(barBackButtonView)
         NSLayoutConstraint.activate([
@@ -71,7 +73,9 @@ extension YogaViewController {
             barBackButtonView.heightAnchor.constraint(equalToConstant: barBackButtonView.frame.height)
         ])
         view.bringSubviewToFront(barBackButtonView)
+        barBackButtonView.isHidden = true
     }
+    
     private func setupTopImageView() {
         scrollContentView.addSubview(topImageView)
         topImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -84,6 +88,7 @@ extension YogaViewController {
         ])
         topImageView.isHidden = true
     }
+    
     private func setupRatingsAndBookmarkView() {
         scrollContentView.addSubview(ratingsAndBookmarkView)
         ratingsAndBookmarkView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,9 +99,10 @@ extension YogaViewController {
             ratingsAndBookmarkView.heightAnchor.constraint(equalToConstant: height),
             ratingsAndBookmarkView.topAnchor.constraint(equalTo: topImageView.bottomAnchor, constant: -height/2)
         ])
-        ratingsAndBookmarkView.capsuleAndDropShadow(boundingWidth: view.frame.width)
+        ratingsAndBookmarkView.roundCornersAndDropShadow(boundingWidth: view.frame.width)
         ratingsAndBookmarkView.isHidden = true
     }
+    
     private func setupAddressAndLocationView() {
         addressAndLocationView = AddressAndLocationView(
             name: "Efficitur Resort Yoga centre",
@@ -111,8 +117,9 @@ extension YogaViewController {
             addressAndLocationView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollViewContentMargin)
         ])
     }
+    
     private func setupScheduleView() {
-        scheduleView = ScheduleView()
+        scheduleView = TimingsAndScheduleView()
         scheduleView.updateTime(weekdayTimeFrame: "09.00 - 18.00", weekendTimeFrame: "08.30 - 17.30")
         scrollContentView.addSubview(scheduleView)
         scheduleView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +129,7 @@ extension YogaViewController {
             scheduleView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollViewContentMargin)
         ])
     }
+    
     private func setupDescriptionView() {
         descriptionView = DescriptionView(description: "Integer ac interdum lacus. Nunc porta semper lacus a varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis")
         scrollContentView.addSubview(descriptionView)
@@ -132,6 +140,7 @@ extension YogaViewController {
             descriptionView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -scrollViewContentMargin)
         ])
     }
+    
     private func setupSeeReviewsButton() {
         seeReviewsView = SeeReviewsTapableView(onTap: navigateToReviews)
         seeReviewsView.translatesAutoresizingMaskIntoConstraints = false
@@ -148,10 +157,11 @@ extension YogaViewController {
 
 //MARK:- YogaTransitionAnimatable
 
-extension YogaViewController: YogaTransitionAnimatable {
+extension YogaViewController: YogaNavigationAnimatorProtocol {
     
     func didCompletePushTransition() {
         topImageView.isHidden = false
         ratingsAndBookmarkView.isHidden = false
+        barBackButtonView.isHidden = false
     }
 }

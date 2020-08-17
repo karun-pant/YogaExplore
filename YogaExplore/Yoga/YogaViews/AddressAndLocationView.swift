@@ -3,7 +3,7 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 15/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
@@ -31,12 +31,15 @@ class AddressAndLocationView: NIBDesignableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK:- Helpers
-    
-    func updateDetails(name: String, address: String) {
-        nameLabel.text = name
-        addressLabel.text = address
+    /// Updates name and address.
+    /// - Parameters:
+    ///   - name: if nil keeps the text in `nameLabel`
+    ///   - address: if nil keeps the text in `addressLabel`
+    func updateDetails(name: String? = nil, address: String? = nil) {
+        nameLabel.text = name != nil ? nameLabel.text : name
+        addressLabel.text = address != nil ? addressLabel.text : address
     }
+    
     @IBAction func tapSeeOnMap(_ sender: UIButton) {
         onSeeMapTap(location)
     }

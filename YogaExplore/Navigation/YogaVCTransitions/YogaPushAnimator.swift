@@ -3,22 +3,27 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 16/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
 
-class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    let duration: TimeInterval = 5
+class YogaPushAnimator: NSObject {
+    let duration: TimeInterval = 0.3
     var presenting = true
     var originFrame = CGRect.zero
+}
+
+// MARK:- UIViewControllerAnimatedTransitioning
+
+extension YogaPushAnimator: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toViewController = transitionContext.viewController(forKey: .to) as? MainTabbarController,
-            let yogaViewController = toViewController.viewControllers?.first as? YogaTransitionAnimatable,
+            let yogaViewController = toViewController.viewControllers?.first as? YogaNavigationAnimatorProtocol,
             let fromViewController = transitionContext.viewController(forKey: .from) else {
                 transitionContext.completeTransition(false)
                 return
@@ -35,6 +40,7 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         // container view
         let containerView = transitionContext.containerView
+        containerView.backgroundColor = Colors.background.color
         containerView.addSubview(fromViewController.view)
         containerView.addSubview(toViewController.view)
         containerView.addSubview(topImageView)

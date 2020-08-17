@@ -3,34 +3,26 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 14/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
 
 struct TabItem {
-    enum Item: String, CaseIterable {
+    
+    // MARK:- Item enum
+    
+    enum ItemType: String, CaseIterable {
         case yoga = "yoga"
         case chats = "chats"
         case articles = "articles"
         case settings = "settings"
         
-        var viewController: UIViewController {
-            let storyboardID: String = {
-                switch self {
-                case .yoga:
-                    return self.rawValue
-                case .articles, .chats, .settings:
-                    return Item.chats.rawValue
-                }
-            }()
-            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID)
-            viewController.title = title
-            return viewController
-        }
         private var title: String {
             self.rawValue.capitalized
         }
+        
+        // attributed title for display
         func displayTitle(isSelected: Bool) -> NSAttributedString {
             let fontSize: CGFloat = 12
             let attributes: [NSAttributedString.Key: Any] = [
@@ -43,6 +35,23 @@ struct TabItem {
             ]
             return NSAttributedString(string: title, attributes: attributes)
         }
+        
+        // view controller based on ItemType
+        var viewController: UIViewController {
+            let storyboardID: String = {
+                switch self {
+                case .yoga:
+                    return self.rawValue
+                case .articles, .chats, .settings:
+                    return ItemType.chats.rawValue
+                }
+            }()
+            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID)
+            viewController.title = title
+            return viewController
+        }
+        
+        // icon for ItemType
         func icon(isSelected: Bool) -> UIImage {
             let imageName: String = {
                 switch self {
@@ -59,7 +68,10 @@ struct TabItem {
             return UIImage(named: imageName) ?? UIImage()
         }
     }
-    let item: Item
+    
+    // MARK:- Properties
+    
+    let item: ItemType
     let isSelected: Bool
     let position: Int
 }

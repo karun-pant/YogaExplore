@@ -3,7 +3,7 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 14/08/20.
-//  Copyright © 2020 DigitalMinds. All rights reserved.
+//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
 //
 
 import UIKit
@@ -56,14 +56,14 @@ class RatingsAndBookmarkView: NIBDesignableView {
             }
             starIconButton.setAssociatedRating(rating: $0.offset + 1)
         }
-        updateRating(rating: rating)
+        self.rating = rating
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func capsuleAndDropShadow(boundingWidth: CGFloat, isShadowNeeded: Bool = true) {
+    func roundCornersAndDropShadow(boundingWidth: CGFloat, isShadowNeeded: Bool = true) {
         contentView.backgroundColor = Colors.background.color
         let shapeSize = Style.estimatedSize(boundingWidth)
         let radius = shapeSize.height/2
@@ -86,25 +86,22 @@ class RatingsAndBookmarkView: NIBDesignableView {
     }
     
     @IBAction private func handleRatingTap(sender: StarIconButton) {
-        updateRating(rating: Double(sender.associatedRating))
+        self.rating = Double(sender.associatedRating)
     }
-    
-    private func updateRating(rating: Double) {
-        self.rating = rating
-    }
-    
     
     @IBAction func bookmarkIt(_ sender: Any) {
         isBookmarked.toggle()
     }
     
+    /// This method checks rating values and sets them into boundry of `0 >= rating <= maxRatingStarsCount`
     private static func boundrifyRating(rating: Double, maxRatingStarsCount: Int) -> Double {
-        guard rating >= 0 && rating <= Double(maxRatingStarsCount) else {
+        let maxRatingStarsCount = Double(maxRatingStarsCount)
+        guard rating >= 0 && rating <= maxRatingStarsCount else {
             assertionFailure("Ratings should be 0...5, defaulting to bounding range 😎")
             return rating < 0
                 ? 0
-                : rating > 5
-                ? 5
+                : rating > maxRatingStarsCount
+                ? maxRatingStarsCount
                 : rating
         }
         return floor(rating)
