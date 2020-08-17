@@ -3,7 +3,7 @@
 //  YogaExplore
 //
 //  Created by Karun Pant on 8/11/20.
-//  Copyright © 2020 iSwiftCoder.com. All rights reserved.
+//  Copyright © 2020 DigitalMinds. All rights reserved.
 //
 
 import UIKit
@@ -13,18 +13,14 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
     private let tabBarHeight: CGFloat = 90
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCustomTabBar ()
+        setupCustomTabbar { viewControllers in
+            self.viewControllers = viewControllers
+        }
         transparentNavigationBar()
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    private func setupCustomTabBar(){
-        // make tab bar transparent
-        tabBar.barTintColor = .clear
-        tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage()
-        
-        // setup custom tab bar on top of tab bar and use it's anchors to layout.
+    private func setupCustomTabbar(_ completion: ([UIViewController]) -> Void){
         var viewControllers = [UIViewController]()
         var tabItems = [TabItem]()
         TabItem.ItemType.allCases.enumerated().forEach {
@@ -32,6 +28,10 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
             viewControllers.append(tabItem.item.viewController)
             tabItems.append(tabItem)
         }
+        // make tab bar transparent
+        tabBar.barTintColor = .clear
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
         let frame = CGRect(origin: tabBar.frame.origin, size: .init(width: tabBar.frame.width, height: tabBarHeight))
         customTabBar = BreadLoafTabBar(tabItems, frame: frame)
         customTabBar.translatesAutoresizingMaskIntoConstraints = false
@@ -46,16 +46,15 @@ class MainTabbarController: UITabBarController, NavigationBarCustomizable {
         ])
         view.layoutIfNeeded()
         self.selectedIndex = 0
-        self.viewControllers = viewControllers
+        completion(viewControllers)
     }
     
     func changeTab(tab: Int) {
         guard let fromView = selectedViewController?.view,
-            let toView = viewControllers?[safe: selectedIndex]?.view else {
+            let toView = viewControllers?[safe: tab]?.view else {
           return
         }
         UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
         self.selectedIndex = tab
     }
 }
-
