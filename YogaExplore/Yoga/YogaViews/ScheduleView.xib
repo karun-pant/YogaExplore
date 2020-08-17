@@ -47,19 +47,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Weekend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1v-4H-1fu">
-                    <rect key="frame" x="354.5" y="0.0" width="59.5" height="16"/>
+                    <rect key="frame" x="355.5" y="0.0" width="58.5" height="16"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
                     <color key="textColor" name="mainText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iK-f9-nuk">
-                    <rect key="frame" x="354.5" y="23" width="59.5" height="17"/>
+                    <rect key="frame" x="355.5" y="23" width="58.5" height="17"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
                     <color key="textColor" name="secondaryText"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-Zs-w8t">
-                    <rect key="frame" x="0.0" y="50" width="94.5" height="22.5"/>
+                    <rect key="frame" x="0.0" y="50" width="92.5" height="22.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22.5" id="EQv-QP-Cdr"/>
                     </constraints>

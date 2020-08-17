@@ -9,7 +9,7 @@
 import UIKit
 
 class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    let duration: TimeInterval = 0.3
+    let duration: TimeInterval = 5
     var presenting = true
     var originFrame = CGRect.zero
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -23,67 +23,73 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
                 transitionContext.completeTransition(false)
                 return
         }
-        let snapshotTopImageView = YogaNavigationAnimationHelper.makeTopImage(yogaViewController)
+        // reqired views
+        let topImageView = YogaNavigationAnimationHelper.makeTopImage(yogaViewController)
         let snapshotRatingsAndBookmarkView = YogaNavigationAnimationHelper.makeRatingsAndBookmarkView(yogaViewController)
-        let ratingsAndBookmarkViewSize = RatingsAndBookmarkView.Style.estimatedSize(yogaViewController.view.frame.width)
         let barBackButtonView = BarBackButtonView(width: yogaViewController.view.frame.width)
+        
+        // required size/frame calculation
+        let ratingsAndBookmarkViewSize = RatingsAndBookmarkView.Style.estimatedSize(yogaViewController.view.frame.width)
+        let snapShotRect = CGRect(origin: .zero, size: topImageView.size)
+        let ratingsYPos = snapShotRect.maxY - ratingsAndBookmarkViewSize.height/2
         
         // container view
         let containerView = transitionContext.containerView
         containerView.addSubview(fromViewController.view)
         containerView.addSubview(toViewController.view)
-        containerView.addSubview(snapshotTopImageView)
+        containerView.addSubview(topImageView)
         containerView.addSubview(snapshotRatingsAndBookmarkView)
         containerView.addSubview(barBackButtonView)
         
         // constraints
-        let topImageTopConstraint = snapshotTopImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: -(snapshotTopImageView.frame.height - 40))
-        let topImageWidthConstraint = snapshotTopImageView.widthAnchor.constraint(equalToConstant: snapshotTopImageView.frame.width)
-        let widthConstraint = snapshotRatingsAndBookmarkView.widthAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.width/2)
-        let ratingsTopFromContainerTop = snapshotTopImageView.frame.maxY - ratingsAndBookmarkViewSize.height/2
+        let topImageHeightConstraint = topImageView.heightAnchor.constraint(equalToConstant: 0)
+        let ratingsAndBookmarkwidthConstraint = snapshotRatingsAndBookmarkView.widthAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.width/2)
+        
         NSLayoutConstraint.activate([
             // barBackButtonView
             barBackButtonView.topAnchor.constraint(equalTo: containerView.topAnchor),
             barBackButtonView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             barBackButtonView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             barBackButtonView.heightAnchor.constraint(equalToConstant: barBackButtonView.frame.height),
+            
             // top image
-            topImageTopConstraint,
-            snapshotTopImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            topImageWidthConstraint,
-            snapshotTopImageView.heightAnchor.constraint(equalToConstant: snapshotTopImageView.frame.height),
+            topImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            topImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            topImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            topImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            topImageHeightConstraint,
             
             // ratings and bookmark
-            snapshotRatingsAndBookmarkView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ratingsTopFromContainerTop),
+            snapshotRatingsAndBookmarkView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ratingsYPos),
             snapshotRatingsAndBookmarkView.heightAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.height),
             snapshotRatingsAndBookmarkView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            widthConstraint
+            ratingsAndBookmarkwidthConstraint
         ])
+        containerView.layoutIfNeeded()
         
         // alpha changes
-        containerView.layoutIfNeeded()
-        snapshotTopImageView.alpha = 0
-        toViewController.view.alpha = 0
-        fromViewController.view.alpha = 1
+        topImageView.alpha = 0
         snapshotRatingsAndBookmarkView.alpha = 0
         barBackButtonView.alpha = 0
+        fromViewController.view.alpha = 1
+        toViewController.view.alpha = 0
         
         // constraint changes
-        widthConstraint.constant = ratingsAndBookmarkViewSize.width
-        topImageTopConstraint.constant = 0
+        ratingsAndBookmarkwidthConstraint.constant = ratingsAndBookmarkViewSize.width
+        topImageHeightConstraint.constant = topImageView.size.height
         
         // Animation
         UIView.animate(withDuration: duration, animations: {
-            snapshotTopImageView.alpha = 1
             fromViewController.view.alpha = 0
             toViewController.view.alpha = 1
+            topImageView.alpha = 1
             snapshotRatingsAndBookmarkView.alpha = 1
             barBackButtonView.alpha = 1
             containerView.layoutIfNeeded()
         },completion: { _ in
             snapshotRatingsAndBookmarkView.removeFromSuperview()
             barBackButtonView.removeFromSuperview()
-            snapshotTopImageView.removeFromSuperview()
+            topImageView.removeFromSuperview()
             fromViewController.view.removeFromSuperview()
             yogaViewController.didCompletePushTransition()
             transitionContext.completeTransition(true)

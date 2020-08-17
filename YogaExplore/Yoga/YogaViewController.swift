@@ -11,13 +11,11 @@ import CoreLocation
 
 class YogaViewController: UIViewController {
     
-    lazy var topImageView: UIImageView = {
+    lazy var topImageView: BreadloafedImageView = {
         let topImageSize: CGSize = .init(width: view.frame.width,
                                          height: view.frame.height * 0.5 + 17)
-        let topImageView = UIImageView(image: UIImage(named: "topImage"))
-        topImageView.frame = .init(origin: .zero, size: topImageSize)
-        topImageView.contentMode = .scaleAspectFill
-        topImageView.breadloafed()
+        let topImageView = BreadloafedImageView(image: UIImage(named: "topImage"),
+                                                size: topImageSize)
         return topImageView
     }()
     let ratingsAndBookmarkView: RatingsAndBookmarkView = RatingsAndBookmarkView(rating: 5, isBookmarked: true)
@@ -75,13 +73,12 @@ extension YogaViewController {
         view.bringSubviewToFront(barBackButtonView)
     }
     private func setupTopImageView() {
-        let topImageSize: CGSize = topImageView.frame.size
         scrollContentView.addSubview(topImageView)
         topImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             // TopImageView
             topImageView.topAnchor.constraint(equalTo: scrollContentView.topAnchor),
-            topImageView.heightAnchor.constraint(equalToConstant: topImageSize.height),
+            topImageView.heightAnchor.constraint(equalToConstant: topImageView.size.height),
             topImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor),
             topImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor)
         ])
