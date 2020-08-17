@@ -41,8 +41,8 @@ extension YogaPopAnimator: UIViewControllerAnimatedTransitioning {
         // container view
         let containerView = transitionContext.containerView
         containerView.backgroundColor = Colors.background.color
-        containerView.addSubview(fromViewController.view)
         containerView.addSubview(toViewController.view)
+        containerView.addSubview(fromViewController.view)
         containerView.addSubview(topImageView)
         containerView.addSubview(snapshotRatingsAndBookmarkView)
         containerView.addSubview(barBackButtonView)
@@ -60,7 +60,6 @@ extension YogaPopAnimator: UIViewControllerAnimatedTransitioning {
             
             // top image
             topImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            topImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             topImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             topImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             topImageHeightConstraint,
@@ -86,7 +85,9 @@ extension YogaPopAnimator: UIViewControllerAnimatedTransitioning {
         
         // constraint changes
         ratingsAndBookmarkwidthConstraint.constant = ratingsAndBookmarkViewSize.width/2
-        topImageHeightConstraint.constant = 0
+        // magic number 0.5 here is somehow defining behaviour in devices with notch,
+        // somehow this constant can't be 0.
+        topImageHeightConstraint.constant = 0.5
         
         // Animation
         UIView.animate(withDuration: duration, animations: {

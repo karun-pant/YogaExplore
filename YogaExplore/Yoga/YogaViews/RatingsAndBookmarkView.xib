@@ -27,10 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-ON-q52">
-                    <rect key="frame" x="25" y="12" width="41.5" height="16.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="41.5" id="r87-V1-uop"/>
-                    </constraints>
+                    <rect key="frame" x="25" y="12" width="40.5" height="16.5"/>
                     <fontDescription key="fontDescription" name="Ubuntu-Regular" family="Ubuntu" pointSize="14"/>
                     <color key="textColor" name="mainText"/>
                     <nil key="highlightedColor"/>

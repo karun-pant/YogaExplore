@@ -16,7 +16,7 @@ class BreadLoafedImageView: UIView {
         self.size = size
         imageView = UIImageView(image: image)
         super.init(frame: .zero)
-        setupImageView(image: nil)
+        setupImageView(image: image)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -26,8 +26,6 @@ class BreadLoafedImageView: UIView {
         imageView.contentMode = .scaleAspectFill
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.masksToBounds = true
-        imageView.clipsToBounds = true
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),

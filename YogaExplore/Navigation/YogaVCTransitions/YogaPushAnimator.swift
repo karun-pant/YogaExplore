@@ -60,7 +60,6 @@ extension YogaPushAnimator: UIViewControllerAnimatedTransitioning {
             
             // top image
             topImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            topImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             topImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             topImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             topImageHeightConstraint,
