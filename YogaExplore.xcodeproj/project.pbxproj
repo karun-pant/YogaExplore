@@ -11,7 +11,7 @@
 		C000B83824E84A3A0022A556 /* SeeReviewsTapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C000B83724E84A3A0022A556 /* SeeReviewsTapableView.swift */; };
 		C0176CA224E511D30003EC9D /* BreadLoafTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0176CA124E511D30003EC9D /* BreadLoafTabBar.swift */; };
 		C0176CA424E515640003EC9D /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0176CA324E515640003EC9D /* TabBarItemView.swift */; };
-		C04C86AA24EA51C7006CF490 /* BreadloafedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04C86A924EA51C7006CF490 /* BreadloafedImageView.swift */; };
+		C04C86AA24EA51C7006CF490 /* BreadLoafedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04C86A924EA51C7006CF490 /* BreadLoafedImageView.swift */; };
 		C056B92424E6739D00BFCAFC /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056B92324E6739D00BFCAFC /* TabItem.swift */; };
 		C056B92A24E695CC00BFCAFC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056B92924E695CC00BFCAFC /* Fonts.swift */; };
 		C056B92C24E6A01F00BFCAFC /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056B92B24E6A01F00BFCAFC /* ArrayExtension.swift */; };
@@ -72,7 +72,7 @@
 		C000B83724E84A3A0022A556 /* SeeReviewsTapableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsTapableView.swift; sourceTree = "<group>"; };
 		C0176CA124E511D30003EC9D /* BreadLoafTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadLoafTabBar.swift; sourceTree = "<group>"; };
 		C0176CA324E515640003EC9D /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
-		C04C86A924EA51C7006CF490 /* BreadloafedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadloafedImageView.swift; sourceTree = "<group>"; };
+		C04C86A924EA51C7006CF490 /* BreadLoafedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadLoafedImageView.swift; sourceTree = "<group>"; };
 		C056B92324E6739D00BFCAFC /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		C056B92924E695CC00BFCAFC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C056B92B24E6A01F00BFCAFC /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				C000B83524E831D90022A556 /* DescriptionView.swift */,
 				C000B83724E84A3A0022A556 /* SeeReviewsTapableView.swift */,
 				C09ACD0B24E9B1A00048A187 /* BarBackButtonView.swift */,
-				C04C86A924EA51C7006CF490 /* BreadloafedImageView.swift */,
+				C04C86A924EA51C7006CF490 /* BreadLoafedImageView.swift */,
 			);
 			path = YogaViews;
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 				C0840B1224E2CCCA00639893 /* ArticlesViewController.swift in Sources */,
 				C09ACD0824E9AA0B0048A187 /* YogaNavigationAnimationHelper.swift in Sources */,
 				C0EC8CF124E79B8E009517EB /* MainNavigationController.swift in Sources */,
-				C04C86AA24EA51C7006CF490 /* BreadloafedImageView.swift in Sources */,
+				C04C86AA24EA51C7006CF490 /* BreadLoafedImageView.swift in Sources */,
 				C0840B2C24E2D93400639893 /* MainTabbarController.swift in Sources */,
 				C056B92424E6739D00BFCAFC /* TabItem.swift in Sources */,
 				C0176CA424E515640003EC9D /* TabBarItemView.swift in Sources */,

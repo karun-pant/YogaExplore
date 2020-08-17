@@ -9,9 +9,9 @@
 import UIKit
 
 struct YogaNavigationAnimationHelper {
-    static func makeTopImage(_ vc: YogaTransitionAnimatable) -> BreadloafedImageView {
+    static func makeTopImage(_ vc: YogaTransitionAnimatable) -> BreadLoafedImageView {
         let topImageView = vc.topImageView
-        let copyImageView = BreadloafedImageView(image: topImageView.imageView.image,
+        let copyImageView = BreadLoafedImageView(image: topImageView.imageView.image,
                                                  size: topImageView.size)
         copyImageView.translatesAutoresizingMaskIntoConstraints = false
         return copyImageView

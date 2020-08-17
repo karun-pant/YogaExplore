@@ -25,7 +25,7 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
         // reqired views
         let topImageView = YogaNavigationAnimationHelper.makeTopImage(yogaViewController)
-        let snapshotRatingsAndBookmarkView = YogaNavigationAnimationHelper.makeRatingsAndBookmarkView(yogaViewController)
+        let ratingsAndBookmarkView = YogaNavigationAnimationHelper.makeRatingsAndBookmarkView(yogaViewController)
         let barBackButtonView = BarBackButtonView(width: yogaViewController.view.frame.width)
         
         // required size/frame calculation
@@ -38,12 +38,12 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(fromViewController.view)
         containerView.addSubview(toViewController.view)
         containerView.addSubview(topImageView)
-        containerView.addSubview(snapshotRatingsAndBookmarkView)
+        containerView.addSubview(ratingsAndBookmarkView)
         containerView.addSubview(barBackButtonView)
         
         // constraints
         let topImageHeightConstraint = topImageView.heightAnchor.constraint(equalToConstant: 0)
-        let ratingsAndBookmarkwidthConstraint = snapshotRatingsAndBookmarkView.widthAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.width/2)
+        let ratingsAndBookmarkwidthConstraint = ratingsAndBookmarkView.widthAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.width/2)
         
         NSLayoutConstraint.activate([
             // barBackButtonView
@@ -60,16 +60,16 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             topImageHeightConstraint,
             
             // ratings and bookmark
-            snapshotRatingsAndBookmarkView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ratingsYPos),
-            snapshotRatingsAndBookmarkView.heightAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.height),
-            snapshotRatingsAndBookmarkView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            ratingsAndBookmarkView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: ratingsYPos),
+            ratingsAndBookmarkView.heightAnchor.constraint(equalToConstant: ratingsAndBookmarkViewSize.height),
+            ratingsAndBookmarkView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             ratingsAndBookmarkwidthConstraint
         ])
         containerView.layoutIfNeeded()
         
         // alpha changes
         topImageView.alpha = 0
-        snapshotRatingsAndBookmarkView.alpha = 0
+        ratingsAndBookmarkView.alpha = 0
         barBackButtonView.alpha = 0
         fromViewController.view.alpha = 1
         toViewController.view.alpha = 0
@@ -83,11 +83,11 @@ class YogaPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             fromViewController.view.alpha = 0
             toViewController.view.alpha = 1
             topImageView.alpha = 1
-            snapshotRatingsAndBookmarkView.alpha = 1
+            ratingsAndBookmarkView.alpha = 1
             barBackButtonView.alpha = 1
             containerView.layoutIfNeeded()
         },completion: { _ in
-            snapshotRatingsAndBookmarkView.removeFromSuperview()
+            ratingsAndBookmarkView.removeFromSuperview()
             barBackButtonView.removeFromSuperview()
             topImageView.removeFromSuperview()
             fromViewController.view.removeFromSuperview()

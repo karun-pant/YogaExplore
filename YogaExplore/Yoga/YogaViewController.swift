@@ -11,10 +11,10 @@ import CoreLocation
 
 class YogaViewController: UIViewController {
     
-    lazy var topImageView: BreadloafedImageView = {
+    lazy var topImageView: BreadLoafedImageView = {
         let topImageSize: CGSize = .init(width: view.frame.width,
                                          height: view.frame.height * 0.5 + 17)
-        let topImageView = BreadloafedImageView(image: UIImage(named: "topImage"),
+        let topImageView = BreadLoafedImageView(image: UIImage(named: "topImage"),
                                                 size: topImageSize)
         return topImageView
     }()

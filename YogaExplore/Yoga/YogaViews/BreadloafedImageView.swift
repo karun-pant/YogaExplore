@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BreadloafedImageView: UIView {
+class BreadLoafedImageView: UIView {
     let imageView: UIImageView
     let size: CGSize
     
@@ -27,6 +27,8 @@ class BreadloafedImageView: UIView {
         addSubview(imageView)
         clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.masksToBounds = true
+        imageView.clipsToBounds = true
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -36,10 +38,11 @@ class BreadloafedImageView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let radius = bounds.size.width * 0.125
-        let shapePath = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: .init(width: radius, height: radius))
+        let radius = frame.size.width * 0.125
+        let shapePath = UIBezierPath(roundedRect: frame, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: .init(width: radius, height: radius))
         let shapeLayerMask = CAShapeLayer()
         shapeLayerMask.path = shapePath.cgPath
         layer.mask = shapeLayerMask
+        layer.masksToBounds = true
     }
 }

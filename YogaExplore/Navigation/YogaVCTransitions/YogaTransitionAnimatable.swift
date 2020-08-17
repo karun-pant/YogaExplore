@@ -9,7 +9,7 @@
 import UIKit
 
 protocol YogaTransitionAnimatable: UIViewController {
-    var topImageView: BreadloafedImageView { get }
+    var topImageView: BreadLoafedImageView { get }
     var ratingsAndBookmarkView: RatingsAndBookmarkView { get }
     func didCompletePushTransition()
 }

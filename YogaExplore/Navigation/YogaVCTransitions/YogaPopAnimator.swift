@@ -75,6 +75,10 @@ class YogaPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         toViewController.view.alpha = 0
         fromViewController.view.alpha = 1
         
+        // hide underlying views
+        yogaViewController.topImageView.isHidden = true
+        yogaViewController.ratingsAndBookmarkView.isHidden = true
+        
         // constraint changes
         ratingsAndBookmarkwidthConstraint.constant = ratingsAndBookmarkViewSize.width/2
         topImageHeightConstraint.constant = 0
@@ -92,7 +96,6 @@ class YogaPopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             barBackButtonView.removeFromSuperview()
             topImageView.removeFromSuperview()
             fromViewController.view.removeFromSuperview()
-            yogaViewController.didCompletePushTransition()
             transitionContext.completeTransition(true)
         })
     }
